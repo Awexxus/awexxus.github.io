@@ -32,13 +32,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="88" />
+          <entry key="css" value="111" />
           <entry key="html" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="88" />
+          <entry key="CSS" value="111" />
           <entry key="HTML" value="11" />
         </counts>
       </usages-collector>
@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="430" column="21" selection-start-line="430" selection-start-column="21" selection-end-line="430" selection-end-column="21" />
+            <state relative-caret-position="392">
+              <caret line="429" column="31" selection-start-line="429" selection-start-column="31" selection-end-line="429" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -58,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="284" column="32" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="37" />
+            <state relative-caret-position="-387">
+              <caret line="284" column="35" lean-forward="true" selection-start-line="284" selection-start-column="35" selection-end-line="284" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -141,15 +141,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535788955443</updated>
-      <workItem from="1535788958792" duration="1899000" />
+      <workItem from="1535788958792" duration="2192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1899000" />
+    <option name="totallyTimeSpent" value="2192000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -182,15 +182,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="284" column="32" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="37" />
+        <state relative-caret-position="-387">
+          <caret line="284" column="35" lean-forward="true" selection-start-line="284" selection-start-column="35" selection-end-line="284" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="430" column="21" selection-start-line="430" selection-start-column="21" selection-end-line="430" selection-end-column="21" />
+        <state relative-caret-position="392">
+          <caret line="429" column="31" selection-start-line="429" selection-start-column="31" selection-end-line="429" selection-end-column="31" />
         </state>
       </provider>
     </entry>
