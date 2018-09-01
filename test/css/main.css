@@ -419,11 +419,18 @@ p{
 }
 @media screen and (max-width: 512px) {
     .menu_slider{
-        width: 380px;
+        width: 375px;
     }
     body{
         margin: 0;
         padding: 0;
+    }
+    .item_our h1,
+    .item_our p,
+    .item_ous a,
+    .item_dis{
+        display: block;
+        font-size: 12px;
     }
     .w_img,
     .c_img{
@@ -435,5 +442,8 @@ p{
     .c_img{
         max-width: 280px;
         max-height: 380px;
+    }
+    .map_img img{
+        max-width: 350px;
     }
 }
