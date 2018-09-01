@@ -385,4 +385,7 @@ footer{
     .icon{
         display: none;
     }
+    .next{
+        right: -3px;
+    }
 }
