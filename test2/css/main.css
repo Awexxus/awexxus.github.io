@@ -361,6 +361,9 @@ footer{
     background: #fc6f4e;
     color: white;
 }
+.menu_right{
+    display: none;
+}
 @media screen and (max-width: 990px){
     .left{
         display: none;
@@ -386,6 +389,20 @@ footer{
         display: none;
     }
     .next{
-        right: -3px;
+        top: 70%;
+        right: -5px;
     }
+    .next img{
+        widht: 50px;
+        height: 50px;
+    }
+    .prev{
+        top: 70%;
+        left: 2px;
+    }
+    .prev img{
+        widht: 50px;
+        height: 50px;
+    }
+
 }
