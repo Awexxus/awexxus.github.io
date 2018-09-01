@@ -364,6 +364,14 @@ footer{
 .menu_right{
     display: none;
 }
+.img_right{
+    position: relative;
+    right: -500px;
+    display: none;
+}
+.text_right{
+    max-width: 359px;
+}
 @media screen and (max-width: 990px){
     .left{
         display: none;

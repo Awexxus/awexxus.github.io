@@ -63,4 +63,13 @@ $(document).ready(function () {
             $('.prev>img').attr('src','./images/arr.png').fadeIn(300)
     });
 
+    $(window).scroll(function () {
+        if(($(window).scrollTop()) > 3100){
+            $('.img_right').css({display: 'block'});
+            $('.img_right').animate({
+                right: '0',
+                }, 600);
+        }
+    })
+
 });
