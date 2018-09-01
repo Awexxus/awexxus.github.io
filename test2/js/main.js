@@ -4,6 +4,7 @@ $(document).ready(function () {
             right: '0',
             opacity: '1',
         },300)
+        $('.open').fadeOut(300);
     });
     $('.menu_icon_close>i').click(function(){
         var widthMenu = -$('.menu_slider').width();
@@ -11,13 +12,14 @@ $(document).ready(function () {
             right: widthMenu,
             opacity: '0',
         },300)
+        $('.open').fadeIn(300);
     });
 
     $(window).scroll(function () {
         if($(window).scrollTop()> 550){
             $('.menu').css({
                 position: 'fixed',
-                zIndex: '13000',
+                zIndex: '11000',
                 background: 'transparent',
                 paddingTop: '30px',
                 transition: 'padding .5s, position .3s'

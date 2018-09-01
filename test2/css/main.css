@@ -17,7 +17,7 @@ h6{
     height: 100%;
     position: fixed;
     background: #c8c8c8;
-    z-index: 14000;
+    z-index: 12000;
     opacity: 0;
 }
 .menu_slider ul{
