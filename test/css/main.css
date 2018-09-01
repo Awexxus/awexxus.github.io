@@ -419,11 +419,15 @@ p{
 }
 @media screen and (max-width: 512px) {
     .menu_slider{
-        width: 100vh;
+        width: 412px;
     }
     body{
-        width: 90%;
         margin: 0;
         padding: 0;
+    }
+    .img_w,
+    .c_img{
+        max-width: 280px;
+        max-height: 380px;
     }
 }
