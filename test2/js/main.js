@@ -3,7 +3,8 @@ $(document).ready(function () {
         $('.menu_slider').animate({
             right: '0',
             opacity: '1',
-        },300)
+        },300);
+        $('.menu_right').css({display: 'block',})
         $('.open').fadeOut(300);
     });
     $('.menu_icon_close>i').click(function(){
@@ -11,7 +12,8 @@ $(document).ready(function () {
         $('.menu_slider').animate({
             right: widthMenu,
             opacity: '0',
-        },300)
+        },300);
+        $('.menu_right').css({display: 'none',})
         $('.open').fadeIn(300);
     });
 
