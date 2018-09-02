@@ -388,7 +388,7 @@ footer{
         min-width:100%;
     }
     .menu_hum{
-        margin: auto;
+        margin: 0!important;
     }
     .icon{
         display: none;
@@ -408,6 +408,15 @@ footer{
     .prev img{
         widht: 50px;
         height: 50px;
+    }
+    .img_right{
+        display: none!important;
+    }
+    .item_part{
+        display: none;
+    }
+    .icon_set{
+        display: none;
     }
 
 }

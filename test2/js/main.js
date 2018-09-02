@@ -15,6 +15,27 @@ $(document).ready(function () {
         },300);
         $('.open').fadeIn(300);
     });
+    $(document).click(function(e){
+        if( $(e.target).closest(".menu_slider").length > 0 || $(e.target).closest(".open>i").length > 0) {
+            return false;
+        }
+        var widthMenu = -$('.menu_slider').width();
+        $('.menu_slider').animate({
+            right: widthMenu,
+            opacity: '0',
+        },300);
+        $('.open').fadeIn(300);
+    });
+    $('.menu_slider a').click(function () {
+        var widthMenu = -$('.menu_slider').width();
+        $('.menu_slider').animate({
+            right: widthMenu,
+            opacity: '0',
+        },300);
+        $('.open').fadeIn(300);
+    })
+
+
 
     $(window).scroll(function () {
         if($(window).scrollTop()> 550){
