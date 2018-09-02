@@ -76,7 +76,7 @@ span{
     padding-top: 15px;
 }
 .land>input{
-    max-height: 40px;
+    max-height: 47px;
     font-weight: bold;
     margin-bottom: 20px;
     min-width: 90%;
@@ -324,9 +324,6 @@ span{
 }
 footer{
     background: #f7f7f7;
-}
-.con_us{
-
 }
 .butt_footer{
     margin: 50px auto 60px auto;

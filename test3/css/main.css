@@ -1,0 +1,331 @@
+body{
+    font-family: Exo;
+    font-weight: 500;
+}
+span{
+    color: #ff6d6d;
+}
+h1{
+    font-size: 40px;
+}
+.banner{
+    background: url(../images/photo-1433354359170-23a4ae7338c6.png) 100% no-repeat;
+    background-size: cover;
+}
+.land_text{
+    margin: 0 auto;
+    text-align: center;
+}
+.land_text .txt h1{
+    margin: 100px 0 40px 0;
+    font-weight: 100;
+    font-size: 60px;
+}
+.land_text .play{
+    max-width: 59px;
+    margin: 0 auto 35px auto;
+}
+.land_text .try{
+    max-width: 190px;
+    margin: 0 auto 25px auto;
+}
+.land_text .low{
+    font-size: 14px;
+    margin-bottom: 220px;
+}
+.design{
+    position: relative;
+}
+.des_txt p{
+    font-size: 16px;
+}
+.des_txt{
+    margin: 170px 0 160px 0;
+}
+.des_img{
+    background: url(../images/fon.png);
+    background-size: cover;
+    right: 0;
+    width: 46%;
+    height: 100%;
+    position: absolute;
+}
+.some{
+    background: url(../images/Penholder.png) 100% no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.some_text{
+    margin: 135px 0 90px 0;
+}
+.some_item{
+    margin: 0;
+}
+.some_txt{
+    margin: 30px 0 180px 0;
+}
+.some_image{
+    position: absolute;
+    right: 10%;
+}
+.resposive{
+    position: relative;
+}
+.resp_image{
+    background: url(../images/fon2.png) 100% 100% no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+}
+.resp_image img{
+    margin: 90px 0 0 0;
+}
+.resp_text{
+    margin: 130px 0 174px 0;
+    text-align: left;
+
+}
+.team{
+    background: url(../images/Group.png) 100% no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.team_item{
+    margin: 110px 0 0 0;
+    padding-bottom: 250px;
+    color: white;
+}
+.team_item h4{
+    margin-top: 22px;
+}
+.team_item h6{
+    margin-bottom: 30px;
+}
+.team_item p{
+    font-size: 16px;
+    font-style: italic;
+    color: #747578;
+}
+.team_icon{
+    display: flex;
+}
+.icon_part{
+    margin-left: 50px;
+}
+.awesome{
+    background: #f6f5f3;
+}
+.awesome .des_txt{
+    margin: 100px auto 100px auto;
+    text-align: center;
+}
+.awesome .des_txt h6{
+    margin-bottom: 10px;
+}
+.awesome .des_txt h1{
+    margin-bottom: 50px;
+}
+.awes_text{
+    text-align: center;
+}
+.over{
+    text-align: center;
+    background: #323969;
+}
+.over .des_txt{
+    margin: 100px auto 100px auto;
+    text-align: center;
+}
+.over h1{
+    color: white;
+}
+.over form .row{
+    width: 100%;
+}
+.name{
+    max-height: 43px;
+}
+form{
+    margin-bottom: 50px;
+}
+.over form input{
+    background: #464c77;
+    min-height: 100%;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-width: 100%;
+    color: #f6f5f3;
+    outline:none;
+    border: none;
+    border: 1px solid #999cb4;
+}
+.btn{
+    background: url(../images/TRYNOW2.png)no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 47px;
+}
+.over form .btn{
+    width: 100%;
+    height: 47px;
+}
+
+.name>input::placeholder,
+.get_form input::placeholder{
+    color: #999cb4;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.name>input:focus,
+.get_form input:focus{
+    padding-left: 20px;
+}
+.form_txt{
+    color: white;
+    margin-bottom: 85px;
+}
+.form_txt span{
+    color: white;
+    text-decoration: underline;
+}
+.all30{
+    width: 100%;
+    height: 100%;
+}
+.over_txt{
+}
+.all30 img{
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-bottom: 5px;
+}
+.all30 p{
+    color: white;
+    font-size: 10px;
+    text-align: left;
+}
+.title{
+    display: flex;
+}
+.start,
+.supp,
+.about,
+.get{
+    margin: 80px 0 90px 0;
+    text-align: left;
+}
+.title h4,
+.supp h4,
+.about h4,
+.get h4{
+    padding-top: 8px;
+}
+.all_foot{
+    padding: 0;
+    display: flex;
+}
+.all_foot p,
+.supp p,
+.about p{
+    margin-top: 8px;
+    font-size: 14px;
+}
+.get_email{
+    width: 200px;
+    height: 47px;
+    border: 1px solid #999cb4;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.input_get .btn{
+    background: url(../images/10.png) left no-repeat;
+    background-size: cover;
+    min-height: 50px;
+    width: 50px;
+    padding: 0;
+}
+.get form{
+    margin-top: 27px;
+}
+.icon_img{
+    width: 250px;
+    text-align: center;
+}
+.get_form{
+    margin-bottom: 20px;
+}
+.icon_img a{
+    margin-right: 20px;
+}
+.some_div{
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.team_div{
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.next_some,
+.next_team,
+.prev_some,
+.prev_team{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .des_img{
+        display: none;
+        background: none;
+    }
+    .resp_image{
+        display: none;
+    }
+    .awes_text{
+        display: none;
+    }
+    .name,
+    .name_btn{
+        margin-bottom: 20px;
+        padding: 0 0 0 30px;
+
+    }
+    .name_btn .btn{
+        background-position: center;
+    }
+    .all_foot{
+        display: block;
+    }
+    .supp{
+        display: none;
+    }
+    .about{
+        display: none;
+    }
+    .prev_some,
+    .prev_team{
+        display: block;
+        position: absolute;
+        top: 30%;
+        left: -5px;
+    }
+    .prev_some img,
+    .prev_team img{
+        height: 50px;
+    }
+    .next_some,
+    .next_team{
+        display: block;
+        position: absolute;
+        top: 30%;
+        right: -5px;
+    }
+    .next_some img,
+    .next_team img{
+        height: 50px;
+    }
+
+}
