@@ -13,7 +13,6 @@ $(document).ready(function () {
             right: widthMenu,
             opacity: '0',
         },300);
-        $('.menu_right').css({display: 'none',})
         $('.open').fadeIn(300);
     });
 
