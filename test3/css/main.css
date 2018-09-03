@@ -277,6 +277,7 @@ form{
 .some_div{
     display: flex;
     position: relative;
+    overflow: hidden;
     width: 100%;
 }
 .team_div{
