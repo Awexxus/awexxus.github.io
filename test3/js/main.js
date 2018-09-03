@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
     console.log($(window).scrollTop())
     $(window).scroll(function () {
-        if(($(window).scrollTop()) > 500 && $(window).width()> 768){
+        if(($(window).scrollTop()) > 450 && $(window).width()> 768){
             $('.design .des_txt').css({display: 'block'});
             $('.design .des_txt').animate({
                 left: '0',

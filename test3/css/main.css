@@ -348,5 +348,7 @@ form{
     .some_item{
         padding-top: 0;
     }
-
+    .some{
+        background: none;
+    }
 }
