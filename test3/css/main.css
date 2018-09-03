@@ -55,9 +55,11 @@ h1{
     position: absolute;
 }
 .some{
-    background: url(../images/Penholder.png) 100% no-repeat;
+    background: url(../images/Penholder.png)  no-repeat;
     background-size: cover;
     text-align: center;
+    max-height: 705px;
+    transition: all .5s;
 }
 .some_text{
     margin: 135px 0 90px 0;
@@ -73,8 +75,12 @@ h1{
     position: absolute;
     right: 10%;
 }
+.resposive>.container{
+    z-index: 11000;
+}
 .resposive{
     position: relative;
+    background: white;
 }
 .resp_image{
     background: url(../images/fon2.png) 100% 100% no-repeat;
@@ -272,7 +278,6 @@ form{
     display: flex;
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 .team_div{
     display: flex;

@@ -20,6 +20,9 @@ $(document).ready(function () {
             }, 600);
         }
         if(($(window).scrollTop()) > 1200 && $(window).width()> 768){
+            $('.some').css({
+                backgroundPosition:'100%'
+            });
             $('.one').animate({
                 padding: '0',
             }, 400);
