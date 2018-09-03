@@ -36,12 +36,16 @@ h1{
 .design{
     position: relative;
 }
+.design .des_txt{
+    left: -900px;
+}
 .des_txt p{
     font-size: 16px;
 }
 .des_txt{
     margin: 170px 0 160px 0;
 }
+
 .des_img{
     background: url(../images/fon.png);
     background-size: cover;
@@ -60,6 +64,7 @@ h1{
 }
 .some_item{
     margin: 0;
+    padding-top: 500px;
 }
 .some_txt{
     margin: 30px 0 180px 0;
@@ -76,6 +81,7 @@ h1{
     background-size: cover;
     position: absolute;
     left: 0;
+    display: none;
 }
 .resp_image img{
     margin: 90px 0 0 0;
@@ -127,6 +133,10 @@ h1{
 }
 .awes_text{
     text-align: center;
+    position: relative;
+}
+.awes_text>img{
+    margin-top: 600px;
 }
 .over{
     text-align: center;
@@ -282,10 +292,10 @@ form{
         background: none;
     }
     .resp_image{
-        display: none;
+        display: none!important;
     }
     .awes_text{
-        display: none;
+        display: none!important;
     }
     .name,
     .name_btn{
@@ -297,13 +307,13 @@ form{
         background-position: center;
     }
     .all_foot{
-        display: block;
+        display: block!important;
     }
     .supp{
-        display: none;
+        display: none!important;
     }
     .about{
-        display: none;
+        display: none!important;
     }
     .prev_some,
     .prev_team{
@@ -326,6 +336,12 @@ form{
     .next_some img,
     .next_team img{
         height: 50px;
+    }
+    .design .des_txt{
+        left: 0px;
+    }
+    .some_item{
+        padding-top: 0;
     }
 
 }
