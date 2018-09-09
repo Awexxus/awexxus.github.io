@@ -128,36 +128,36 @@ class SiteController extends Controller
 
     public function actionEdit(){
         //Если пользователь не гость
-        if(!Yii::$app->user->isGuest){
+        if(!Yii::$app->user->isGuest) {
             //создаем модель
-        $model = new Edit();
-        //получаем ид
-        $id = Yii::$app->request->get('id');
-        //Все отпуска
-            $allHoliday = Holiday::find()->orderBy(['id_parent'=>SORT_ASC])->all();
-        //ищем запись в бд
-        $holiday = Holiday::find()->where(['id' => $id])->one();
-        //получаем новые данные
-        $date = Yii::$app->request->post('Edit');
-        //Если ид пользователя равно ид пользователя, который создавал запись, или пользователь админ
-        if((Yii::$app->user->identity->id == $holiday['id_parent']) || Yii::$app->user->identity->status == 1){
-            //Если данные переданы
-                if($date) {
-                    //записываем в модель
-                    $model->attributes = $date;
-                    //Если прошли валидацию
-                    if ($model->validate()) {
-                        //Редактируем
-                        $model->editholiday($id);
-                        return $this->render('success_edit');
+            $model = new Edit();
+            //получаем ид
+            $id = Yii::$app->request->get('id');
+            //Все отпуска
+            $allHoliday = Holiday::find()->orderBy(['id_parent' => SORT_ASC])->all();
+            //ищем запись в бд
+            $holiday = Holiday::find()->where(['id' => $id])->one();
+            //получаем новые данные
+            $date = Yii::$app->request->post('Edit');
+            //Если ид пользователя равно ид пользователя, который создавал запись , и запись не заблокирована, или пользователь админ
+            if(((Yii::$app->user->identity->id == $holiday['id_parent']) && $holiday['block']==0) || Yii::$app->user->identity->status == 1){
+                    //Если данные переданы
+                    if ($date) {
+                        //записываем в модель
+                        $model->attributes = $date;
+                        //Если прошли валидацию
+                        if ($model->validate()) {
+                            //Редактируем
+                            $model->editholiday($id);
+                            return $this->render('success_edit');
+                        }
                     }
-                }
                     //олучаем все отпуска для вида
                     return $this->render('edit', compact(['model', 'holiday', 'allHoliday']));
-                }else{
-            return $this->render ('error');
+                } else {
+                    return $this->render('error');
+                }
             }
-        }
         else{
             return $this->render ('error');
         }
