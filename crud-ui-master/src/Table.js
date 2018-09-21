@@ -29,19 +29,13 @@ class Table extends Component {
                 </thead>
                 {items.map((item) => {
                     if (item['data']) {
-                        Object.keys(item['data']).map((key) => {
-                            global.author = item['data']['author'];
-                            global.isbn = item['data']['isbn'];
-                            global.caption = item['data']['caption'];
-                        });
+                        global.array = item['data'];
                     }
                     return (
                         <GetItem
                             key = {item['_id']}
                             id = {item['_id']}
-                            author = {global.author}
-                            isbn = {global.isbn}
-                            caption = {global.caption}
+                            array = {global.array}
                         />
                     );
                 })}

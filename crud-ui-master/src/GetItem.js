@@ -49,7 +49,7 @@ class GetItem extends Component {
         }
     }
     render(){
-        const {id, author, isbn, caption } = this.props;
+        const {id, array } = this.props;
         return (
             <tbody>
             {
@@ -57,9 +57,9 @@ class GetItem extends Component {
                 ? (
                         <tr key={id}>
                             <td>{id}</td>
-                            <td><input placeholder={author} ref={editAuthor => this.editAuthor = editAuthor}/></td>
-                            <td><input placeholder={isbn} ref={editIsbn => this.editIsbn = editIsbn}/></td>
-                            <td><input placeholder={caption} ref={editCaption => this.editCaption = editCaption}/></td>
+                            <td><input ref={editAuthor => this.editAuthor = editAuthor}/></td>
+                            <td><input ref={editIsbn => this.editIsbn = editIsbn}/></td>
+                            <td><input ref={editCaption => this.editCaption = editCaption}/></td>
                             <td className="noneBorder">
                                 <button  onClick={() => this.editOneId()}>Сохранить</button>
                             </td>
@@ -67,9 +67,11 @@ class GetItem extends Component {
                 ):(
                  <tr key={id}>
                 <td>{id}</td>
-                <td>{author}</td>
-                <td>{isbn}</td>
-                <td>{caption}</td>
+                     {
+                         Object.values(array).map((value) =>{
+                             return (<td>{value}</td>)
+                         })
+                     }
                 <td className="noneBorder">
                     <button onClick={() => this.deleteId(id)}>Удалить</button>
                      <button  onClick={() => this.editId()}>Редактировать</button>
