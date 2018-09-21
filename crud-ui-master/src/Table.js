@@ -27,18 +27,20 @@ class Table extends Component {
                     <td>Caption</td>
                 </tr>
                 </thead>
-                {items.map((item) => {
-                    if (item['data']) {
-                        global.array = item['data'];
-                    }
-                    return (
-                        <GetItem
-                            key = {item['_id']}
-                            id = {item['_id']}
-                            array = {global.array}
-                        />
-                    );
-                })}
+                <tbody>
+                    {items.map((item) => {
+                        if (item['data']) {
+                            global.array = item['data'];
+                        }
+                        return (
+                            <GetItem
+                                key = {item['_id']}
+                                id = {item['_id']}
+                                array = {global.array}
+                            />
+                        );
+                    })}
+                </tbody>
             </table>
         );
     }

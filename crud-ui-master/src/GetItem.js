@@ -13,7 +13,6 @@ class GetItem extends Component {
         this.editOneId = this.editOneId.bind(this);
     }
     EditOneItem(id ,author, isbn, caption){
-        console.log(id)
         return fetch('http://server.noorsoft.ru:9022/api/records/'+id, {
             method: 'POST',
             headers: {
@@ -51,37 +50,34 @@ class GetItem extends Component {
     render(){
         const {id, array } = this.props;
         return (
-            <tbody>
-            {
+
                 this.state.edit
                 ? (
-                        <tr key={id}>
-                            <td>{id}</td>
-                            <td><input ref={editAuthor => this.editAuthor = editAuthor}/></td>
-                            <td><input ref={editIsbn => this.editIsbn = editIsbn}/></td>
-                            <td><input ref={editCaption => this.editCaption = editCaption}/></td>
-                            <td className="noneBorder">
-                                <button  onClick={() => this.editOneId()}>Сохранить</button>
-                            </td>
-                        </tr>
+                    <tr key={id}>
+                      <td>{id}</td>
+                      <td><input placeholder="author" ref={editAuthor => this.editAuthor = editAuthor}/></td>
+                      <td><input placeholder="isbn" ref={editIsbn => this.editIsbn = editIsbn}/></td>
+                      <td><input placeholder="caption" ref={editCaption => this.editCaption = editCaption}/></td>
+                      <td className="noneBorder">
+                           <button  onClick={() => this.editOneId()}>Сохранить</button>
+                      </td>
+                    </tr>
                 ):(
                  <tr key={id}>
-                <td>{id}</td>
-                     {
-                         Object.values(array).map((value) =>{
-                             return (<td>{value}</td>)
-                         })
-                     }
-                <td className="noneBorder">
-                    <button onClick={() => this.deleteId(id)}>Удалить</button>
-                     <button  onClick={() => this.editId()}>Редактировать</button>
-                </td>
+                    <td>{id}</td>
+                         {
+                             Object.values(array).map((value, index) =>{
+                                 return (<td key={index}>{value}</td>);
+                             })
+                         }
+                    <td className="noneBorder">
+                        <button onClick={() => this.deleteId(id)}>Удалить</button>
+                        <button onClick={() => this.editId()}>Редактировать</button>
+                    </td>
                  </tr>
                 )
-            }
-            </tbody>);
+           );
     }
-
 }
 
 export default GetItem;

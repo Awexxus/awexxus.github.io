@@ -17,8 +17,6 @@ class App extends Component {
           <section>
               <Table />
           </section>
-          <section>
-          </section>
       </div>
     );
   }
