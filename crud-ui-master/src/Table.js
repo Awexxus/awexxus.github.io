@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import GetItem from './GetItem';
+import AddItem from "./AddItem";
 
 class Table extends Component {
     constructor(props){
         super(props);
-        this.state = {items: []};
+        this.state = {
+            items: [],
+        };
     }
-    componentWillMount(){
+    componentDidMount(){
+        this.getItems();
+    }
+    getItems = () =>{
         fetch('http://server.noorsoft.ru:9022/api/records')
             .then(res => res.json())
             .then((result) => {
@@ -14,10 +20,41 @@ class Table extends Component {
                     items: result
                 });
             })
+            .catch(error => console.log(error))
+    }
+    EditOneItem(id ,author, isbn, caption){
+        fetch('http://server.noorsoft.ru:9022/api/records/'+id, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: {
+                    author: author,
+                    isbn: isbn,
+                    caption: caption
+                }
+            })
+        })
+        .then(this.getItems)
+        .catch(error => console.log(error))
+
+    }
+    deleteId(id){
+        fetch('http://server.noorsoft.ru:9022/api/records/' + id, {
+            method: 'DELETE',
+        })
+        .then(this.getItems)
+        .catch(error => console.log(error))
     }
     render(){
         const {items} = this.state;
         return (
+            <div>
+            <AddItem
+                getItems={this.getItems}
+            />
             <table>
                 <thead>
                 <tr>
@@ -37,14 +74,15 @@ class Table extends Component {
                                 key = {item['_id']}
                                 id = {item['_id']}
                                 array = {global.array}
+                                getItems={this.getItems}
                             />
                         );
                     })}
                 </tbody>
             </table>
+            </div>
         );
     }
 
 }
-
 export default Table;

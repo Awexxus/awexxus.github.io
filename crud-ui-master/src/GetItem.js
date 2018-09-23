@@ -1,5 +1,4 @@
-import {Component} from "react";
-import React from "react";
+import React, {Component} from "react";
 
 class GetItem extends Component {
     constructor(props){
@@ -7,13 +6,12 @@ class GetItem extends Component {
         this.state = {
             edit: false
         }
-
         this.deleteId = this.deleteId.bind(this);
         this.editId = this.editId.bind(this);
         this.editOneId = this.editOneId.bind(this);
     }
     EditOneItem(id ,author, isbn, caption){
-        return fetch('http://server.noorsoft.ru:9022/api/records/'+id, {
+        fetch('http://server.noorsoft.ru:9022/api/records/'+id, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -27,12 +25,18 @@ class GetItem extends Component {
                 }
             })
         })
-            .then(response => response.json())
+        .then(this.setState({
+            edit: false
+        }))
+        .then(this.props.getItems)
+        .catch(error => console.log(error))
     }
     deleteId(id){
-        return fetch('http://server.noorsoft.ru:9022/api/records/' + id, {
+        fetch('http://server.noorsoft.ru:9022/api/records/' + id, {
             method: 'DELETE',
-        }),window.location.reload();
+        })
+        .then(this.props.getItems)
+        .catch(error => console.log(error))
     }
     editId(){
         this.setState({
@@ -42,7 +46,6 @@ class GetItem extends Component {
     editOneId(){
         if (this.editAuthor.value, this.editIsbn.value, this.editCaption.value != '') {
             this.EditOneItem(this.props.id, this.editAuthor.value, this.editIsbn.value, this.editCaption.value);
-            window.location.reload();
         }else{
             return (alert('Заполните данные'))
         }
@@ -50,7 +53,6 @@ class GetItem extends Component {
     render(){
         const {id, array } = this.props;
         return (
-
                 this.state.edit
                 ? (
                     <tr key={id}>
@@ -67,7 +69,7 @@ class GetItem extends Component {
                     <td>{id}</td>
                          {
                              Object.values(array).map((value, index) =>{
-                                 return (<td key={index}>{value}</td>);
+                                 return (<td key={index+value}>{value}</td>);
                              })
                          }
                     <td className="noneBorder">
