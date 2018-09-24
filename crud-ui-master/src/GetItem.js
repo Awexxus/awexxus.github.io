@@ -44,7 +44,7 @@ class GetItem extends Component {
         })
     }
     editOneId(){
-        if (this.resAuthor.value = '', this.resIsbn.value = '', this.resCaption.value = '') {
+        if (this.editAuthor.value !== '', this.editIsbn.value !== '', this.editCaption.value !== '') {
             this.EditOneItem(this.props.id, this.editAuthor.value, this.editIsbn.value, this.editCaption.value);
         }else{
             return (alert('Заполните данные'))
@@ -69,7 +69,7 @@ class GetItem extends Component {
                     <td>{id}</td>
                          {
                              Object.values(array).map((value, index) =>{
-                                 if(value != '') {
+                                 if(value !== '') {
                                      return (<td key={index}>{value}</td>);
                                  }else{
                                      return (<td key={index}>Нет данных</td>);

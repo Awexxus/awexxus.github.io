@@ -22,7 +22,7 @@ class AddItem extends Component {
     }
     onSubmit(event){
         event.preventDefault();
-        if (this.resAuthor.value = '', this.resIsbn.value = '', this.resCaption.value = '') {
+        if (this.resAuthor.value !== '', this.resIsbn.value !== '', this.resCaption.value !== '') {
         this.AddOneItem(this.resAuthor.value, this.resIsbn.value, this.resCaption.value);
         }else{
             return (alert('Заполните данные'))
