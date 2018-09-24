@@ -25,10 +25,10 @@ class GetItem extends Component {
                 }
             })
         })
+        .then(this.props.getItems)
         .then(this.setState({
             edit: false
         }))
-        .then(this.props.getItems)
         .catch(error => console.log(error))
     }
     deleteId(id){
@@ -44,7 +44,7 @@ class GetItem extends Component {
         })
     }
     editOneId(){
-        if (this.editAuthor.value, this.editIsbn.value, this.editCaption.value != '') {
+        if (this.resAuthor.value = '', this.resIsbn.value = '', this.resCaption.value = '') {
             this.EditOneItem(this.props.id, this.editAuthor.value, this.editIsbn.value, this.editCaption.value);
         }else{
             return (alert('Заполните данные'))
