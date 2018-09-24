@@ -51,15 +51,16 @@ class GetItem extends Component {
         }
     }
     render(){
-        const {id, array } = this.props;
+        const {id, array} = this.props;
+
         return (
                 this.state.edit
                 ? (
                     <tr key={id}>
                       <td>{id}</td>
-                      <td><input placeholder="author" ref={editAuthor => this.editAuthor = editAuthor}/></td>
-                      <td><input placeholder="isbn" ref={editIsbn => this.editIsbn = editIsbn}/></td>
-                      <td><input placeholder="caption" ref={editCaption => this.editCaption = editCaption}/></td>
+                      <td><input defaultValue={array.author} ref={editAuthor => this.editAuthor = editAuthor}/></td>
+                      <td><input defaultValue={array.caption} ref={editIsbn => this.editIsbn = editIsbn}/></td>
+                      <td><input defaultValue={array.caption} ref={editCaption => this.editCaption = editCaption}/></td>
                       <td className="noneBorder">
                            <button  onClick={() => this.editOneId()}>Сохранить</button>
                       </td>

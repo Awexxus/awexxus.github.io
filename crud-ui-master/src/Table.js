@@ -16,6 +16,7 @@ class Table extends Component {
         fetch('http://server.noorsoft.ru:9022/api/records')
             .then(res => res.json())
             .then((result) => {
+                console.log(result)
                 this.setState({
                     items: result
                 });
