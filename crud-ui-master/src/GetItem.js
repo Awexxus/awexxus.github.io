@@ -59,7 +59,7 @@ class GetItem extends Component {
                     <tr key={id}>
                       <td>{id}</td>
                       <td><input defaultValue={array.author} ref={editAuthor => this.editAuthor = editAuthor}/></td>
-                      <td><input defaultValue={array.caption} ref={editIsbn => this.editIsbn = editIsbn}/></td>
+                      <td><input defaultValue={array.isbn} ref={editIsbn => this.editIsbn = editIsbn}/></td>
                       <td><input defaultValue={array.caption} ref={editCaption => this.editCaption = editCaption}/></td>
                       <td className="noneBorder">
                            <button  onClick={() => this.editOneId()}>Сохранить</button>
