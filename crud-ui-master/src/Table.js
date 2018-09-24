@@ -16,37 +16,12 @@ class Table extends Component {
         fetch('http://server.noorsoft.ru:9022/api/records')
             .then(res => res.json())
             .then((result) => {
+                console.log(result)
                 this.setState({
                     items: result
                 });
             })
             .catch(error => console.log(error))
-    }
-    EditOneItem(id ,author, isbn, caption){
-        fetch('http://server.noorsoft.ru:9022/api/records/'+id, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                data: {
-                    author: author,
-                    isbn: isbn,
-                    caption: caption
-                }
-            })
-        })
-        .then(this.getItems)
-        .catch(error => console.log(error))
-
-    }
-    deleteId(id){
-        fetch('http://server.noorsoft.ru:9022/api/records/' + id, {
-            method: 'DELETE',
-        })
-        .then(this.getItems)
-        .catch(error => console.log(error))
     }
     render(){
         const {items} = this.state;
@@ -67,7 +42,13 @@ class Table extends Component {
                 <tbody>
                     {items.map((item) => {
                         if (item['data']) {
-                            global.array = item['data'];
+                                global.array = item['data'];
+                        }else{
+                            global.array = [
+                                "Нет данных",
+                                "Нет данных",
+                                "Нет данных"
+                            ]
                         }
                         return (
                             <GetItem

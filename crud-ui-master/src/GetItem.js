@@ -69,7 +69,11 @@ class GetItem extends Component {
                     <td>{id}</td>
                          {
                              Object.values(array).map((value, index) =>{
-                                 return (<td key={index+value}>{value}</td>);
+                                 if(value != '') {
+                                     return (<td key={index}>{value}</td>);
+                                 }else{
+                                     return (<td key={index}>Нет данных</td>);
+                                 }
                              })
                          }
                     <td className="noneBorder">
