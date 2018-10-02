@@ -9,6 +9,13 @@ export default () => async dispatch =>{
             type: DATA_FETCHED_SUCCESSFULLY,
             payload: items
         });
+        setInterval(async ()=>{
+            const items = await getItems();
+            dispatch({
+                type: DATA_FETCHED_SUCCESSFULLY,
+                payload: items
+            });
+        }, 30000)
     } catch (error) {
         dispatch({
             type: DATA_FETCHED_FAILURE,
