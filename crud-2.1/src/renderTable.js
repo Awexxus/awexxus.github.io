@@ -8,25 +8,36 @@ import deleteItem from './actions/delete'
 
 
 class renderTable extends Component {
-
     constructor(props){
         super(props);
+        this.state={
+            id: false,
+            edit: false
+        }
+        setInterval(()=>{this.props.dispatch(getItems())}, 30000)
     }
     componentWillMount(){
-        const {dispatch} = this.props
-        dispatch(getItems())
+        const {dispatch} = this.props;
+        dispatch(getItems());
     }
     delete = (id) =>{
         this.props.dispatch(deleteItem(id))
     }
     edit = (id) => {
-        this.props.dispatch(editItem(id))
+        this.setState({
+            id : id,
+            edit: true
+        })
     }
     editOneItem(id, author, isbn, caption){
-        this.props.dispatch(editItem(id,  author, isbn, caption))
+        this.props.dispatch(editItem(id,  author, isbn, caption)).then(this.setState({
+            id: false,
+            edit: false
+        }))
+
     }
     renderEdit = (id, author, isbn, caption) => {
-            if (this.props.edit.edit !== 'success' && id === this.props.edit.id) {
+            if (id === this.state.id && this.state.edit === true) {
                 return (
                     <Tr key={id}>
                         <Td column='ID'>{id}</Td>
@@ -59,9 +70,8 @@ class renderTable extends Component {
             }
     }
     renderTr = (id, author, isbn, caption) =>{
-        if(this.props.deleteItem.id !== id) {
             return (
-                <Tr key={id+author}>
+                <Tr key={id}>
                     <Td column='ID'>{id}</Td>
                     <Td column='Author'>{author}</Td>
                     <Td column='Isbn'>{isbn}</Td>
@@ -74,7 +84,6 @@ class renderTable extends Component {
                     </Td>
                 </Tr>
             );
-        }
     }
     render() {
         const {items} = this.props;
@@ -97,7 +106,7 @@ class renderTable extends Component {
                                 }
                                 if(key['_id']) {
                                     return (
-                                        this.props.edit.edit
+                                        this.state.edit
                                             ? this.renderEdit(key['_id'], author, isbn, caption)
                                             : this.renderTr(key['_id'], author, isbn, caption)
 
