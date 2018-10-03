@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+header ul{
+  display: flex;
+  list-style: none;
+}
+header li{
+  margin-right: 20px;
+}
+.header{
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.header input{
+  margin-right: 20px;
+}
+.header h1{
+  margin: 0;
+  padding: 20px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
