@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Table, Td, Tr } from 'reactable';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
-import getItems from './actions'
-import editItem from './actions/edit'
-import deleteItem from './actions/delete'
-
+import getItems from './actions';
+import editItem from './actions/edit';
+import deleteItem from './actions/delete';
+import { Field, reduxForm } from 'redux-form';
 
 class renderTable extends Component {
     constructor(props){
@@ -29,8 +29,8 @@ class renderTable extends Component {
             edit: true
         })
     }
-    editOneItem(id, author, isbn, caption){
-        this.props.dispatch(editItem(id,  author, isbn, caption)).then(this.setState({
+    editOneItem = (values)  =>{
+        this.props.dispatch(editItem(this.state.id,  values.author, values.isbn, values.caption)).then(this.setState({
             id: false,
             edit: false
         }))
@@ -40,15 +40,13 @@ class renderTable extends Component {
             if (id === this.state.id && this.state.edit === true) {
                 return (
                     <Tr key={id}>
-                        <Td column='ID'>{id}</Td>
-                        <Td column='Author'><input defaultValue={author}
-                                                   ref={editAuthor => this.editAuthor = editAuthor}/></Td>
-                        <Td column='Isbn'><input defaultValue={isbn} ref={editIsbn => this.editIsbn = editIsbn}/></Td>
-                        <Td column='Caption'><input defaultValue={caption}
-                                                    ref={editCaption => this.editCaption = editCaption}/></Td>
+                        <Td column='ID' name="id">{id}</Td>
+                        <Td column='Author'><Field name="author" component="input" type="text" /></Td>
+                        <Td column='Isbn'><Field name="isbn" component="input" type="text" /></Td>
+                        <Td column='Caption'><Field name="caption" component="input" type="text" /></Td>
                         <Td column='Удалить'>
                             <Button
-                                onClick={() => this.editOneItem(id, this.editAuthor.value, this.editIsbn.value, this.editCaption.value)}
+                                onClick={this.props.handleSubmit(this.editOneItem)}
                                 color="success">Сохранить</Button>
                         </Td>
                     </Tr>
@@ -87,7 +85,7 @@ class renderTable extends Component {
     }
     render() {
         const {items} = this.props;
-        var author, isbn, caption;
+        let author, isbn, caption;
         return (
             <div>
                 <Table className="table">
@@ -120,11 +118,12 @@ class renderTable extends Component {
         );
     }
 }
+renderTable = reduxForm({
+    form: 'edit'
+})(renderTable)
 const mapStateToProps = (state) =>{
     return{
         items: state.items,
-        edit: state.edit,
-        deleteItem: state.deleteItem,
     }
 }
 const mapDispatchToProps = (dispatch) => {
