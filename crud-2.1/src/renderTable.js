@@ -26,7 +26,7 @@ class renderTable extends Component {
     edit = (id) => {
         this.setState({
             id : id,
-            edit: true
+            edit: true,
         })
     }
     editOneItem = (values)  =>{
@@ -41,9 +41,9 @@ class renderTable extends Component {
                 return (
                     <Tr key={id}>
                         <Td column='ID' name="id">{id}</Td>
-                        <Td column='Author'><Field name="author" component="input" type="text" /></Td>
-                        <Td column='Isbn'><Field name="isbn" component="input" type="text" /></Td>
-                        <Td column='Caption'><Field name="caption" component="input" type="text" /></Td>
+                        <Td column='Author'><Field name="author" placeholder={author} component="input" type="text" /></Td>
+                        <Td column='Isbn'><Field name="isbn" placeholder={isbn} component="input" type="text" /></Td>
+                        <Td column='Caption'><Field name="caption" placeholder={caption} component="input" type="text" /></Td>
                         <Td column='Удалить'>
                             <Button
                                 onClick={this.props.handleSubmit(this.editOneItem)}
@@ -61,7 +61,7 @@ class renderTable extends Component {
                             <Button onClick={() => this.delete(id)} color="danger">Удалить</Button>
                         </Td>
                         <Td column={'Редактировать'}>
-                            <Button onClick={() => this.edit(id)} color="primary">Редактировать</Button>
+                            <Button onClick={() => this.edit(id, author, isbn, caption)} color="primary">Редактировать</Button>
                         </Td>
                     </Tr>
                 )
@@ -78,7 +78,7 @@ class renderTable extends Component {
                         <Button onClick={() => this.delete(id)} color="danger">Удалить</Button>
                     </Td>
                     <Td column={'Редактировать'}>
-                        <Button onClick={() => this.edit(id)} color="primary">Редактировать</Button>
+                        <Button onClick={() => this.edit(id, author, isbn, caption)} color="primary">Редактировать</Button>
                     </Td>
                 </Tr>
             );
@@ -119,11 +119,11 @@ class renderTable extends Component {
     }
 }
 renderTable = reduxForm({
-    form: 'edit'
+    form: 'edit',
 })(renderTable)
 const mapStateToProps = (state) =>{
     return{
-        items: state.items,
+        items: state.items
     }
 }
 const mapDispatchToProps = (dispatch) => {
