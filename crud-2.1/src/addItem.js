@@ -5,8 +5,9 @@ import FormAdd from './formAdd';
 
 class addItem extends Component {
     submit = values => {
-        if (values.author !== '', values.isbn !== '', values.caption !== '') {
+        if (values.author !== '' && values.isbn !== '' && values.caption !== '') {
             this.props.dispatch(addNewItem(values.author, values.isbn, values.caption));
+            values.author = ''; values.isbn = ''; values.caption = '';
         } else {
             return (alert('Заполните данные'))
         }
@@ -22,4 +23,4 @@ class addItem extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {dispatch};
 }
-export default connect(state =>({}), mapDispatchToProps)(addItem);
+export default connect(null, mapDispatchToProps)(addItem);

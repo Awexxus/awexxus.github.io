@@ -34,37 +34,35 @@ class renderTable extends Component {
             id: false,
             edit: false
         }))
-
     }
     renderEdit = (id, author, isbn, caption) => {
             if (id === this.state.id && this.state.edit === true) {
-                return (
-                    <Tr key={id}>
-                        <Td column='ID' name="id">{id}</Td>
-                        <Td column='Author'><Field name="author" placeholder={author} component="input" type="text" /></Td>
-                        <Td column='Isbn'><Field name="isbn" placeholder={isbn} component="input" type="text" /></Td>
-                        <Td column='Caption'><Field name="caption" placeholder={caption} component="input" type="text" /></Td>
-                        <Td column='Удалить'>
-                            <Button
-                                onClick={this.props.handleSubmit(this.editOneItem)}
-                                color="success">Сохранить</Button>
-                        </Td>
-                    </Tr>
-                );
+                return (<Tr key={id}>
+                            <Td column='ID' name="id">{id}</Td>
+                            <Td column='Author'><Field name="author" placeholder={author} component="input" type="text" /></Td>
+                            <Td column='Isbn'><Field name="isbn" placeholder={isbn} component="input" type="text" /></Td>
+                            <Td column='Caption'><Field name="caption" placeholder={caption} component="input" type="text" /></Td>
+                            <Td column='Удалить'>
+                                <Button
+                                    onClick={this.props.handleSubmit(this.editOneItem)}
+                                    color="success">
+                                    Сохранить
+                                </Button>
+                            </Td>
+                        </Tr>);
             } else {
                 return (<Tr key={id}>
-                        <Td column='ID'>{id}</Td>
-                        <Td column='Author'>{author}</Td>
-                        <Td column='Isbn'>{isbn}</Td>
-                        <Td column='Caption'>{caption}</Td>
-                        <Td column='Удалить'>
-                            <Button onClick={() => this.delete(id)} color="danger">Удалить</Button>
-                        </Td>
-                        <Td column={'Редактировать'}>
-                            <Button onClick={() => this.edit(id, author, isbn, caption)} color="primary">Редактировать</Button>
-                        </Td>
-                    </Tr>
-                )
+                            <Td column='ID'>{id}</Td>
+                            <Td column='Author'>{author}</Td>
+                            <Td column='Isbn'>{isbn}</Td>
+                            <Td column='Caption'>{caption}</Td>
+                            <Td column='Удалить'>
+                                <Button onClick={() => this.delete(id)} color="danger">Удалить</Button>
+                            </Td>
+                            <Td column={'Редактировать'}>
+                                <Button onClick={() => this.edit(id, author, isbn, caption)} color="primary">Редактировать</Button>
+                            </Td>
+                        </Tr>)
             }
     }
     renderTr = (id, author, isbn, caption) =>{
@@ -77,7 +75,7 @@ class renderTable extends Component {
                     <Td column='Удалить'>
                         <Button onClick={() => this.delete(id)} color="danger">Удалить</Button>
                     </Td>
-                    <Td column={'Редактировать'}>
+                    <Td column='Редактировать'>
                         <Button onClick={() => this.edit(id, author, isbn, caption)} color="primary">Редактировать</Button>
                     </Td>
                 </Tr>
@@ -92,7 +90,7 @@ class renderTable extends Component {
                     {
                             Object.values(items).map((key => {
                                 if(key['data']){
-                                    Object.keys(key['data']).map(item=>{
+                                    Object.keys(key['data']).map(item =>{
                                         key['data']['author'] ? (author = key['data']['author']):(author = '');
                                         key['data']['isbn'] ? (isbn = key['data']['isbn']):(isbn = '');
                                         key['data']['caption'] ? (caption = key['data']['caption']):(caption = '');

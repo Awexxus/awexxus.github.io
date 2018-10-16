@@ -8,7 +8,7 @@ export default (id, author, isbn, caption) => async dispatch =>{
         type: DATA_UPDATED_START,
         id: id
     });
-    if( author, isbn, caption) {
+    if( author && isbn && caption) {
         try {
             await editItem(id, author, isbn, caption);
             dispatch({
