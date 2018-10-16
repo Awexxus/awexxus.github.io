@@ -31,6 +31,7 @@ class addItem extends Component {
             <div className="header">
                 <form onSubmit={handleSubmit}>
                     <h1>Добавить запись</h1>
+                    <h1>Здесь</h1>
                     <Field name="author" placeholder="author" component="input" type="text" />
                     <Field name="isbn" placeholder="isbn" component="input" type="text" />
                     <Field name="caption" placeholder="caption" component="input" type="text" />
