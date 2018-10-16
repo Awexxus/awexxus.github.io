@@ -44,6 +44,8 @@ class addItem extends Component {
         );
     }
 }
+
+
 addItem = reduxForm({
     form: 'add'
 })(addItem)
